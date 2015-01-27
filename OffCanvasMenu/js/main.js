@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	$('.menu').click(function(){
-		$('#menu').toggleClass('active');
-		$('.container').toggleClass("active");
+		$('header').toggleClass('openHeader');
+		$('nav ul').toggleClass('open');
 	});
+	var navUl = $('nav ul');
+	navUl.height($(window).height());
 });

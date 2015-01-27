@@ -8,6 +8,16 @@ textarea {
     color: #222;
 }
 
+body {
+  overflow: hidden;
+}
+
+header {
+  position: relative;
+  left: 0;
+  transition: all .4s ease;
+}
+
 html {
     font-size: 1em;
     line-height: 1.4;
@@ -56,8 +66,9 @@ textarea {
     padding: 0.2em 0;
 }
 
-
-
+.menu {
+  display: none;
+}
 
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
@@ -166,7 +177,6 @@ body {
 /* ====================
     INTERMEDIATE: Menu
    ==================== */
-
     nav a {
         float: left;
         margin: 0 1.7%;
@@ -184,46 +194,48 @@ body {
 
     .menu {
       display: block;
-      margin-top: 10px;
-      cursor: pointer;
     }
 
-    #menu {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      width: 13.755em;
-      right: -13.755em;
-      height: 100%;
-      transform: translate(0px, 0px);
-      transition: 0.15s ease;
-    }
-
-    #menu.active {
-      transform: translate(-13.755em, 0px);
-    }
-
-    .container {
-      transform: translate(0px, 0px);
-      transition: 0.15s ease;
-    }
-
-    .container .active {
-      transform: translate(-13.725em, 0px)
-    }
-
-    .menu-link {
-      position: absolute;
-      top: 15px;
-      left: -50px;
-    }
     
 
 /* ========================
     INTERMEDIATE: IE Fixes
    ======================== */
+   nav {
+    height: 800px;
+   }
+
    nav ul {
-    display: none;
+    position: absolute;
+    top: 0;
+    margin-top: -10px;
+    right: -150px;
+    width: 150px;
+    background: #dedede;
+   }
+
+   .open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    transition: all .4s ease-in-out;
+   }
+
+   .openHeader {
+    position: absolute;
+    top: 0;
+    left: -150px;
+    transition all .4s ease-in-out;
+   }
+
+   .close {
+    position: absolute;
+    top: 0;
+    right: -150px;
+    width: 150px;
+    padding-top: 40px;
+    transition: all .4s ease;
    }
    
     nav ul li {
